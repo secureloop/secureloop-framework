@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="sl-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href="/">
+        <img src="/logo.png" alt="secureloop" height="48" />
+      </a>
+    </div>
+    <div class="footer-text">
+      <p>&copy; {currentYear} Toni Menzel. Alle Rechte vorbehalten.</p>
+      <p class="footer-links">
+        <a href="https://rebaze.de" target="_blank" rel="noopener noreferrer">rebaze GmbH</a>
+        <span class="separator">·</span>
+        <a href="/contact/">Kontakt</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .sl-footer {
+    border-top: 1px solid var(--sl-color-gray-3);
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    height: 48px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-logo img:hover {
+    opacity: 1;
+  }
+
+  .footer-text {
+    color: var(--sl-color-gray-5);
+    font-size: 0.875rem;
+  }
+
+  .footer-text p {
+    margin: 0.25rem 0;
+  }
+
+  .footer-links a {
+    color: var(--sl-color-gray-5);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+    color: var(--sl-color-gray-4);
+  }
+
+  :global([data-theme='dark']) .footer-logo img {
+    filter: invert(1);
+  }
+</style>

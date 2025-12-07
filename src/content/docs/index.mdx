@@ -1,0 +1,70 @@
+---
+title: Das SECURELOOP Framework
+description: Die 5 Schleifen für sichere Software-Lieferketten - Der deutsche Wissenshub für SBOM, Supply Chain Security und Compliance
+template: splash
+hero:
+  tagline: Die 5 Schleifen für sichere Software-Lieferketten
+  actions:
+    - text: Wissensdatenbank erkunden
+      link: /knowledge/sbom/
+      icon: right-arrow
+      variant: primary
+    - text: Über das Framework
+      link: /about/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="hero-section">
+  <p class="hero-description">
+    In einer Welt, in der über 90% Ihrer Software aus externen Quellen stammt,
+    brauchen Sie ein systematisches Framework für Supply Chain Security.
+    SECURELOOP gibt Ihnen die Struktur, um Risiken zu erkennen, zu bewerten und zu minimieren.
+  </p>
+</div>
+
+## Die 5 Loops
+
+<CardGrid>
+  <Card title="1. DISCOVER – Erkennen" icon="magnifier">
+    Was ist in Ihrer Software? SBOM-Generierung, Abhängigkeitsanalyse und vollständige Transparenz über alle Komponenten.
+
+    [→ SBOM erklärt](/knowledge/sbom/)
+  </Card>
+  <Card title="2. VERIFY – Prüfen" icon="approve-check">
+    Ist es sicher? Schwachstellen-Scanning, Lizenzprüfung und kontinuierliche Sicherheitsbewertung.
+
+    [→ Vulnerability Scanning](/knowledge/vulnerability-scanning/)
+  </Card>
+  <Card title="3. SECURE – Absichern" icon="shield">
+    Können Sie dem vertrauen? Digitale Signaturen, Attestierung und manipulationssichere Herkunftsnachweise.
+
+    [→ Software-Signierung](/knowledge/software-signing/)
+  </Card>
+  <Card title="4. ENFORCE – Durchsetzen" icon="setting">
+    Stoppen, was unsicher ist. Policy-as-Code, Admission Control und automatisierte Sicherheitsregeln.
+  </Card>
+  <Card title="5. MONITOR – Überwachen" icon="warning">
+    Sicher bleiben über die Zeit. Kontinuierliches Monitoring, Alerting und Schwachstellenmanagement.
+  </Card>
+</CardGrid>
+
+## Warum SECURELOOP?
+
+<CardGrid>
+  <Card title="Wachsende Bedrohungslage" icon="warning">
+    Supply Chain Angriffe wie SolarWinds und Log4Shell zeigen: Die Lieferkette ist das neue Einfallstor. 91% aller Anwendungen nutzen Open-Source-Komponenten mit bekannten Schwachstellen.
+  </Card>
+  <Card title="Regulatorischer Druck" icon="document">
+    NIS2, DORA und der Cyber Resilience Act (CRA) machen Supply Chain Security zur Pflicht. Unternehmen müssen nachweisen, was in ihrer Software steckt.
+
+    [→ NIS2 erklärt](/knowledge/nis2/) | [→ DORA erklärt](/knowledge/dora/)
+  </Card>
+  <Card title="Komplexität managen" icon="puzzle">
+    Moderne Anwendungen haben hunderte Abhängigkeiten. Ohne systematischen Ansatz verlieren Sie den Überblick. SECURELOOP gibt Ihnen Struktur.
+  </Card>
+  <Card title="Praxiserprobt" icon="rocket">
+    Entwickelt aus der Arbeit in hochregulierten Umgebungen: Banking, Defense, Aerospace und Public Sector. Kein akademisches Konzept, sondern gelebte Praxis.
+  </Card>
+</CardGrid>

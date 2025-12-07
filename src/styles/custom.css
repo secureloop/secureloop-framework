@@ -1,0 +1,437 @@
+/* SECURELOOP Custom Theme
+   Brand Colors:
+   - Dark Grey: #202020 (primary - most elements and fonts)
+   - Mint: #eef8e3 (text on dark backgrounds)
+   - Electric Green: #88eead (highlight - use sparingly, only on dark grey)
+   - Off-white: #f8f8f8 (general background)
+*/
+
+:root {
+  /* Core palette - Light Mode */
+  --sl-color-accent-low: #f0f0f0;
+  --sl-color-accent: #202020;
+  --sl-color-accent-high: #202020;
+
+  /* Override Starlight's blue color family with neutral greys */
+  --sl-hue-blue: 0;
+  --sl-color-blue-low: #f0f0f0;
+  --sl-color-blue: #666666;
+  --sl-color-blue-high: #202020;
+
+  /* Text accent color (used by buttons, links) */
+  --sl-color-text-accent: #202020;
+
+  /* Grayscale - neutral, no blue */
+  --sl-color-white: #f8f8f8;
+  --sl-color-gray-1: #f5f5f5;
+  --sl-color-gray-2: #eeeeee;
+  --sl-color-gray-3: #dddddd;
+  --sl-color-gray-4: #999999;
+  --sl-color-gray-5: #666666;
+  --sl-color-gray-6: #202020;
+  --sl-color-black: #202020;
+
+  /* Brand highlight - use sparingly */
+  --sl-brand-green: #88eead;
+  --sl-brand-mint: #eef8e3;
+  --sl-brand-dark: #202020;
+
+  /* Code syntax highlighting - readable colors */
+  --astro-code-token-constant: #202020;
+  --astro-code-token-link: #202020;
+  --astro-code-token-string: #202020;
+  --astro-code-token-comment: #666666;
+  --astro-code-token-keyword: #202020;
+  --astro-code-token-parameter: #202020;
+  --astro-code-token-function: #202020;
+  --astro-code-token-string-expression: #202020;
+  --astro-code-token-punctuation: #202020;
+  --astro-code-color-text: #202020;
+  --astro-code-color-background: #f5f5f5;
+
+  /* Typography */
+  --sl-font: 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  --sl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font weights */
+  --sl-text-h1: 300;
+  --sl-text-h2: 400;
+}
+
+/* Dark mode */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #2a2a2a;
+  --sl-color-accent: #88eead;
+  --sl-color-accent-high: #88eead;
+
+  /* Override blue color family for dark mode */
+  --sl-color-blue-low: #2a2a2a;
+  --sl-color-blue: #888888;
+  --sl-color-blue-high: #eef8e3;
+
+  /* Text accent color for dark mode */
+  --sl-color-text-accent: #88eead;
+
+  /* Code syntax highlighting for dark mode - readable on dark bg */
+  --astro-code-token-constant: #eef8e3;
+  --astro-code-token-link: #88eead;
+  --astro-code-token-string: #eef8e3;
+  --astro-code-token-comment: #999999;
+  --astro-code-token-keyword: #eef8e3;
+  --astro-code-token-parameter: #eef8e3;
+  --astro-code-token-function: #88eead;
+  --astro-code-token-string-expression: #eef8e3;
+  --astro-code-token-punctuation: #cccccc;
+  --astro-code-color-text: #eef8e3;
+  --astro-code-color-background: #202020;
+
+  --sl-color-gray-1: #1a1a1a;
+  --sl-color-gray-2: #202020;
+  --sl-color-gray-3: #333333;
+  --sl-color-gray-4: #666666;
+  --sl-color-gray-5: #999999;
+  --sl-color-gray-6: #eef8e3;
+  --sl-color-white: #181818;
+  --sl-color-black: #eef8e3;
+}
+
+/* Clean, minimal header */
+header.header {
+  border-bottom: 1px solid var(--sl-color-gray-3);
+}
+
+/* Header logo styling */
+.site-title img {
+  height: 4rem;
+  width: auto;
+}
+
+:root[data-theme='dark'] .site-title img {
+  filter: invert(1);
+}
+
+/* Sidebar styling */
+.sidebar-content {
+  font-weight: 400;
+}
+
+/* Sidebar active link - override Starlight's blue */
+[data-current="true"] > a,
+.sidebar a[aria-current="page"],
+.sidebar-content a[aria-current="page"],
+nav.sidebar a[aria-current="page"] {
+  background: #202020 !important;
+  color: #ffffff !important;
+  border-color: #202020 !important;
+}
+
+:root[data-theme='dark'] [data-current="true"] > a,
+:root[data-theme='dark'] .sidebar a[aria-current="page"],
+:root[data-theme='dark'] .sidebar-content a[aria-current="page"],
+:root[data-theme='dark'] nav.sidebar a[aria-current="page"] {
+  background: #88eead !important;
+  color: #202020 !important;
+  border-color: #88eead !important;
+}
+
+/* Links in light mode - dark grey, underlined */
+a {
+  color: #202020;
+}
+
+a:hover {
+  color: #444444;
+}
+
+/* Prose content links */
+.sl-markdown-content a {
+  color: #202020;
+  text-decoration: underline;
+  text-decoration-color: #cccccc;
+  text-underline-offset: 3px;
+}
+
+.sl-markdown-content a:hover {
+  text-decoration-color: #202020;
+}
+
+:root[data-theme='dark'] .sl-markdown-content a {
+  color: #eef8e3;
+  text-decoration-color: #555555;
+}
+
+:root[data-theme='dark'] .sl-markdown-content a:hover {
+  text-decoration-color: #88eead;
+}
+
+/* Dark mode links - mint colored */
+:root[data-theme='dark'] a {
+  color: #eef8e3;
+}
+
+:root[data-theme='dark'] a:hover {
+  color: #88eead;
+}
+
+/* Headlines - lighter weight, clean */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #202020;
+}
+
+.sl-markdown-content h1 {
+  font-weight: 300;
+}
+
+:root[data-theme='dark'] .sl-markdown-content h1,
+:root[data-theme='dark'] .sl-markdown-content h2,
+:root[data-theme='dark'] .sl-markdown-content h3 {
+  color: #eef8e3;
+}
+
+/* Hero section on homepage */
+.hero-section {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--sl-color-gray-5);
+  max-width: 40rem;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Cards - clean borders */
+.card {
+  border: 1px solid var(--sl-color-gray-3);
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #202020;
+}
+
+:root[data-theme='dark'] .card:hover {
+  border-color: #88eead;
+}
+
+/* Starlight Card component overrides */
+.sl-link-card {
+  border: 1px solid var(--sl-color-gray-3);
+  background: var(--sl-color-white);
+}
+
+.sl-link-card:hover {
+  border-color: #202020;
+}
+
+:root[data-theme='dark'] .sl-link-card {
+  background: var(--sl-color-gray-2);
+}
+
+:root[data-theme='dark'] .sl-link-card:hover {
+  border-color: #88eead;
+}
+
+/* Code blocks */
+pre {
+  background: #f5f5f5 !important;
+  border: 1px solid var(--sl-color-gray-3);
+}
+
+pre code,
+pre code span {
+  color: #202020 !important;
+}
+
+:root[data-theme='dark'] pre {
+  background: #2a2a2a !important;
+}
+
+:root[data-theme='dark'] pre code,
+:root[data-theme='dark'] pre code span {
+  color: #eef8e3 !important;
+}
+
+/* Syntax highlighting - ensure all tokens are readable */
+.astro-code span,
+pre.astro-code span {
+  color: #202020 !important;
+}
+
+:root[data-theme='dark'] .astro-code span,
+:root[data-theme='dark'] pre.astro-code span {
+  color: #eef8e3 !important;
+}
+
+/* Inline code */
+code:not(pre code) {
+  background: var(--sl-color-gray-2);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  color: #202020;
+}
+
+:root[data-theme='dark'] code:not(pre code) {
+  background: #333333;
+  color: #eef8e3;
+}
+
+/* Tables */
+table {
+  border-color: var(--sl-color-gray-3);
+}
+
+th {
+  background: var(--sl-color-gray-1);
+}
+
+:root[data-theme='dark'] th {
+  background: var(--sl-color-gray-2);
+}
+
+/* Asides (note, tip, caution) */
+.starlight-aside {
+  border-color: var(--sl-color-gray-4);
+}
+
+/* Note asides - light background in light mode, readable text */
+.starlight-aside--note {
+  --sl-color-asides-text-accent: #202020;
+  border-color: #dddddd;
+  background-color: #f5f5f5;
+  color: #202020;
+}
+
+.starlight-aside--note .starlight-aside__title,
+.starlight-aside--note .starlight-aside__content {
+  color: #202020;
+}
+
+:root[data-theme='dark'] .starlight-aside--note {
+  --sl-color-asides-text-accent: #eef8e3;
+  border-color: #444444;
+  background-color: #2a2a2a;
+  color: #eef8e3;
+}
+
+:root[data-theme='dark'] .starlight-aside--note .starlight-aside__title,
+:root[data-theme='dark'] .starlight-aside--note .starlight-aside__content {
+  color: #eef8e3;
+}
+
+/* Tips get the green highlight - sparingly */
+.starlight-aside--tip {
+  border-color: #88eead;
+}
+
+:root[data-theme='dark'] .starlight-aside--tip {
+  border-color: #88eead;
+}
+
+/* Search */
+.search-input {
+  border: 1px solid var(--sl-color-gray-3);
+}
+
+.search-input:focus {
+  border-color: #202020;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--sl-color-gray-3);
+}
+
+:root[data-theme='dark'] .search-input:focus {
+  border-color: #88eead;
+  box-shadow: 0 0 0 2px #333333;
+}
+
+/* Buttons */
+button[data-open-modal] {
+  border: 1px solid var(--sl-color-gray-3);
+}
+
+button[data-open-modal]:hover {
+  border-color: #202020;
+}
+
+:root[data-theme='dark'] button[data-open-modal]:hover {
+  border-color: #88eead;
+}
+
+/* Primary link button (hero CTA) - override blue */
+.sl-link-button.primary,
+a.sl-link-button.primary {
+  background: #202020 !important;
+  border-color: #202020 !important;
+  color: #ffffff !important;
+}
+
+.sl-link-button.primary:hover,
+a.sl-link-button.primary:hover {
+  background: #444444 !important;
+  border-color: #444444 !important;
+}
+
+:root[data-theme='dark'] .sl-link-button.primary,
+:root[data-theme='dark'] a.sl-link-button.primary {
+  background: #88eead !important;
+  border-color: #88eead !important;
+  color: #202020 !important;
+}
+
+:root[data-theme='dark'] .sl-link-button.primary:hover,
+:root[data-theme='dark'] a.sl-link-button.primary:hover {
+  background: #a8f4c5 !important;
+  border-color: #a8f4c5 !important;
+}
+
+/* Mobile menu */
+.mobile-preferences {
+  border-top: 1px solid var(--sl-color-gray-3);
+}
+
+/* Footer-like bottom spacing */
+.main-pane {
+  padding-bottom: 4rem;
+}
+
+/* Cleaner pagination */
+.pagination-links a {
+  border: 1px solid var(--sl-color-gray-3);
+  transition: border-color 0.2s ease;
+}
+
+.pagination-links a:hover {
+  border-color: #202020;
+}
+
+:root[data-theme='dark'] .pagination-links a:hover {
+  border-color: #88eead;
+}
+
+/* Sidebar active state - green highlight only in dark mode */
+:root[data-theme='dark'] [aria-current="page"],
+:root[data-theme='dark'] [aria-current="true"] {
+  color: #88eead;
+}
+
+/* Navigation - keep dark grey in light mode */
+nav a {
+  color: #202020;
+}
+
+:root[data-theme='dark'] nav a {
+  color: #eef8e3;
+}
+
+:root[data-theme='dark'] nav a:hover {
+  color: #88eead;
+}
